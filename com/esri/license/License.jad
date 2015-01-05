@@ -1,0 +1,1411 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   License.java
+
+package com.esri.license;
+
+import java.io.*;
+import java.math.BigInteger;
+import java.security.*;
+import java.security.spec.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.logging.Logger;
+
+public class License
+{
+    public static final class EsriFeatureCode extends Enum
+    {
+
+        public static EsriFeatureCode[] values()
+        {
+            return (EsriFeatureCode[])a.clone();
+        }
+
+        public static EsriFeatureCode valueOf(String s)
+        {
+            return (EsriFeatureCode)Enum.valueOf(com/esri/license/License$EsriFeatureCode, s);
+        }
+
+        public static final EsriFeatureCode esriServerLicenseAdvanced;
+        public static final EsriFeatureCode esriServerLicenseStandard;
+        public static final EsriFeatureCode esriServerLicenseBasic;
+        public static final EsriFeatureCode esriServerGeoEventProc;
+        public static final EsriFeatureCode esriPortalStandard;
+        public static final EsriFeatureCode esriRuntimeStandard;
+        public static final EsriFeatureCode esriRuntimeBasic;
+        public static final EsriFeatureCode esriRuntimeNetwork;
+        public static final EsriFeatureCode esriRuntimeSpatial;
+        public static final EsriFeatureCode esriRuntime3D;
+        private static final EsriFeatureCode a[];
+        public static boolean b;
+        private static final String z[];
+
+        static 
+        {
+            String as[] = new String[10];
+            as;
+            as;
+            0;
+            "*F>Nn*G:BO\bP#bK*[8wO V";
+            -1;
+              goto _L1
+_L6:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            true;
+            "*F>No:[8NP*f<FI&T ";
+            false;
+              goto _L1
+_L7:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            2;
+            "*F>Nn*G:BO\003\\/BS<P\rCK.[/BY";
+            true;
+              goto _L1
+_L8:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            3;
+            "*F>No:[8NP*{)SJ G'";
+            2;
+              goto _L1
+_L9:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            4;
+            "*F>No:[8NP*\006\b";
+            3;
+              goto _L1
+_L10:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            5;
+            "*F>Nn*G:BO\003\\/BS<P\037S\\!Q-UY";
+            4;
+              goto _L1
+_L11:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            6;
+            "*F>Nm G8FQ\034A-IY.G(";
+            5;
+              goto _L1
+_L12:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            7;
+            "*F>No:[8NP*f8FS+T>C";
+            6;
+              goto _L1
+_L13:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            8;
+            "*F>No:[8NP*w-TT,";
+            7;
+              goto _L1
+_L14:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            9;
+            "*F>Nn*G:BO\003\\/BS<P\016FN&V";
+            8;
+              goto _L1
+_L15:
+            JVM INSTR aastore ;
+            z;
+              goto _L2
+_L1:
+            JVM INSTR swap ;
+            toCharArray();
+            JVM INSTR dup ;
+            JVM INSTR arraylength .length;
+            JVM INSTR swap ;
+            int j = 0;
+              goto _L3
+_L5:
+            JVM INSTR dup ;
+            j;
+            JVM INSTR dup2 ;
+            JVM INSTR caload ;
+            byte byte0;
+            switch(j % 5)
+            {
+            case 0: // '\0'
+                byte0 = 0x4f;
+                break;
+
+            case 1: // '\001'
+                byte0 = 53;
+                break;
+
+            case 2: // '\002'
+                byte0 = 76;
+                break;
+
+            case 3: // '\003'
+                byte0 = 39;
+                break;
+
+            default:
+                byte0 = 61;
+                break;
+            }
+            byte0;
+            JVM INSTR ixor ;
+            (char);
+            JVM INSTR castore ;
+            j++;
+_L3:
+            JVM INSTR swap ;
+            JVM INSTR dup_x1 ;
+            j;
+            JVM INSTR icmpgt 121;
+               goto _L4 _L5
+_L4:
+            JVM INSTR new #94  <Class String>;
+            JVM INSTR dup_x1 ;
+            JVM INSTR swap ;
+            String();
+            intern();
+            JVM INSTR swap ;
+            JVM INSTR pop ;
+            JVM INSTR swap ;
+            JVM INSTR tableswitch 0 8: default 14
+        //                       0 23
+        //                       1 32
+        //                       2 41
+        //                       3 50
+        //                       4 59
+        //                       5 69
+        //                       6 80
+        //                       7 91
+        //                       8 102;
+               goto _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15
+_L2:
+            esriServerLicenseAdvanced = new EsriFeatureCode(z[2], 0);
+            esriServerLicenseStandard = new EsriFeatureCode(z[5], 1);
+            esriServerLicenseBasic = new EsriFeatureCode(z[9], 2);
+            esriServerGeoEventProc = new EsriFeatureCode(z[0], 3);
+            esriPortalStandard = new EsriFeatureCode(z[6], 4);
+            esriRuntimeStandard = new EsriFeatureCode(z[7], 5);
+            esriRuntimeBasic = new EsriFeatureCode(z[8], 6);
+            esriRuntimeNetwork = new EsriFeatureCode(z[3], 7);
+            esriRuntimeSpatial = new EsriFeatureCode(z[1], 8);
+            esriRuntime3D = new EsriFeatureCode(z[4], 9);
+            a = (new EsriFeatureCode[] {
+                esriServerLicenseAdvanced, esriServerLicenseStandard, esriServerLicenseBasic, esriServerGeoEventProc, esriPortalStandard, esriRuntimeStandard, esriRuntimeBasic, esriRuntimeNetwork, esriRuntimeSpatial, esriRuntime3D
+            });
+        }
+
+        private EsriFeatureCode(String s, int j)
+        {
+            super(s, j);
+        }
+    }
+
+    public static final class EsriApplication extends Enum
+    {
+
+        public static EsriApplication[] values()
+        {
+            return (EsriApplication[])a.clone();
+        }
+
+        public static EsriApplication valueOf(String s)
+        {
+            return (EsriApplication)Enum.valueOf(com/esri/license/License$EsriApplication, s);
+        }
+
+        public static final EsriApplication esriArcGISServer;
+        public static final EsriApplication esriArcGISPortal;
+        public static final EsriApplication esriArcGISRuntime;
+        private static final EsriApplication a[];
+        private static final String z[];
+
+        static 
+        {
+            String as[] = new String[3];
+            as;
+            as;
+            0;
+            "\0204xZ{\007$Mzi%(xG[\031";
+            -1;
+              goto _L1
+_L6:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            true;
+            "\0204xZ{\007$Mzi'2dGS\030\"";
+            false;
+              goto _L1
+_L7:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            2;
+            "\0204xZ{\007$Mzi&\"xE_\007";
+            true;
+              goto _L1
+_L8:
+            JVM INSTR aastore ;
+            z;
+              goto _L2
+_L1:
+            JVM INSTR swap ;
+            toCharArray();
+            JVM INSTR dup ;
+            JVM INSTR arraylength .length;
+            JVM INSTR swap ;
+            int j = 0;
+              goto _L3
+_L5:
+            JVM INSTR dup ;
+            j;
+            JVM INSTR dup2 ;
+            JVM INSTR caload ;
+            byte byte0;
+            switch(j % 5)
+            {
+            case 0: // '\0'
+                byte0 = 0x75;
+                break;
+
+            case 1: // '\001'
+                byte0 = 71;
+                break;
+
+            case 2: // '\002'
+                byte0 = 10;
+                break;
+
+            case 3: // '\003'
+                byte0 = 51;
+                break;
+
+            default:
+                byte0 = 58;
+                break;
+            }
+            byte0;
+            JVM INSTR ixor ;
+            (char);
+            JVM INSTR castore ;
+            j++;
+_L3:
+            JVM INSTR swap ;
+            JVM INSTR dup_x1 ;
+            j;
+            JVM INSTR icmpgt 50;
+               goto _L4 _L5
+_L4:
+            JVM INSTR new #57  <Class String>;
+            JVM INSTR dup_x1 ;
+            JVM INSTR swap ;
+            String();
+            intern();
+            JVM INSTR swap ;
+            JVM INSTR pop ;
+            JVM INSTR swap ;
+            JVM INSTR tableswitch 0 1: default 13
+        //                       0 22
+        //                       1 31;
+               goto _L6 _L7 _L8
+_L2:
+            esriArcGISServer = new EsriApplication(z[2], 0);
+            esriArcGISPortal = new EsriApplication(z[0], 1);
+            esriArcGISRuntime = new EsriApplication(z[1], 2);
+            a = (new EsriApplication[] {
+                esriArcGISServer, esriArcGISPortal, esriArcGISRuntime
+            });
+        }
+
+        private EsriApplication(String s, int j)
+        {
+            super(s, j);
+        }
+    }
+
+    public static final class esriLicenseStatus extends Enum
+    {
+
+        public static esriLicenseStatus[] values()
+        {
+            return (esriLicenseStatus[])a.clone();
+        }
+
+        public static esriLicenseStatus valueOf(String s)
+        {
+            return (esriLicenseStatus)Enum.valueOf(com/esri/license/License$esriLicenseStatus, s);
+        }
+
+        public static final esriLicenseStatus licenseStatusSuccess;
+        public static final esriLicenseStatus licenseStatusNotAvailable;
+        public static final esriLicenseStatus licenseStatusExpired;
+        public static final esriLicenseStatus licenseStatusInvalidSignature;
+        public static final esriLicenseStatus licenseStatusUnknown;
+        private static final esriLicenseStatus a[];
+        private static final String z[];
+
+        static 
+        {
+            String as[] = new String[5];
+            as;
+            as;
+            0;
+            "ax\bP\001~t8A\016yd\030|\001{p\007\\\013^x\f[\016yd\031P";
+            -1;
+              goto _L1
+_L6:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            true;
+            "ax\bP\001~t8A\016yd\030`\001f\177\004B\001";
+            false;
+              goto _L1
+_L7:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            2;
+            "ax\bP\001~t8A\016yd\030p\027}x\031P\013";
+            true;
+              goto _L1
+_L8:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            3;
+            "ax\bP\001~t8A\016yd\030{\000yP\035T\006ap\tY\n";
+            2;
+              goto _L1
+_L9:
+            JVM INSTR aastore ;
+            JVM INSTR dup ;
+            4;
+            "ax\bP\001~t8A\016yd\030f\032nr\016F\034";
+            3;
+              goto _L1
+_L10:
+            JVM INSTR aastore ;
+            z;
+              goto _L2
+_L1:
+            JVM INSTR swap ;
+            toCharArray();
+            JVM INSTR dup ;
+            JVM INSTR arraylength .length;
+            JVM INSTR swap ;
+            int j = 0;
+              goto _L3
+_L5:
+            JVM INSTR dup ;
+            j;
+            JVM INSTR dup2 ;
+            JVM INSTR caload ;
+            byte byte0;
+            switch(j % 5)
+            {
+            case 0: // '\0'
+                byte0 = 0xd;
+                break;
+
+            case 1: // '\001'
+                byte0 = 17;
+                break;
+
+            case 2: // '\002'
+                byte0 = 107;
+                break;
+
+            case 3: // '\003'
+                byte0 = 53;
+                break;
+
+            default:
+                byte0 = 111;
+                break;
+            }
+            byte0;
+            JVM INSTR ixor ;
+            (char);
+            JVM INSTR castore ;
+            j++;
+_L3:
+            JVM INSTR swap ;
+            JVM INSTR dup_x1 ;
+            j;
+            JVM INSTR icmpgt 68;
+               goto _L4 _L5
+_L4:
+            JVM INSTR new #67  <Class String>;
+            JVM INSTR dup_x1 ;
+            JVM INSTR swap ;
+            String();
+            intern();
+            JVM INSTR swap ;
+            JVM INSTR pop ;
+            JVM INSTR swap ;
+            JVM INSTR tableswitch 0 3: default 13
+        //                       0 22
+        //                       1 31
+        //                       2 40
+        //                       3 49;
+               goto _L6 _L7 _L8 _L9 _L10
+_L2:
+            licenseStatusSuccess = new esriLicenseStatus(z[4], 0);
+            licenseStatusNotAvailable = new esriLicenseStatus(z[3], 1);
+            licenseStatusExpired = new esriLicenseStatus(z[2], 2);
+            licenseStatusInvalidSignature = new esriLicenseStatus(z[0], 3);
+            licenseStatusUnknown = new esriLicenseStatus(z[1], 4);
+            a = (new esriLicenseStatus[] {
+                licenseStatusSuccess, licenseStatusNotAvailable, licenseStatusExpired, licenseStatusInvalidSignature, licenseStatusUnknown
+            });
+        }
+
+        private esriLicenseStatus(String s, int j)
+        {
+            super(s, j);
+        }
+    }
+
+
+    private String a(String s)
+        throws IOException
+    {
+        StringBuilder stringbuilder;
+        Scanner scanner;
+        String s1;
+        boolean flag;
+        flag = EsriFeatureCode.b;
+        File file = new File(s);
+        stringbuilder = new StringBuilder((int)file.length());
+        scanner = new Scanner(file, z[11]);
+        s1 = System.getProperty(z[10]);
+_L4:
+        if(!scanner.hasNextLine())
+            break; /* Loop/switch isn't completed */
+        stringbuilder.append(scanner.nextLine()).append(s1);
+        if(flag) goto _L2; else goto _L1
+_L1:
+        JVM INSTR pop ;
+        if(!flag) goto _L4; else goto _L3
+_L3:
+        stringbuilder;
+_L2:
+        toString();
+        String s2;
+        s2;
+        scanner.close();
+        return s2;
+        Exception exception;
+        exception;
+        scanner.close();
+        throw exception;
+    }
+
+    public License(String s, EsriApplication esriapplication, int j)
+        throws IOException
+    {
+        boolean flag = EsriFeatureCode.b;
+        super();
+        c = z[24];
+        e = Arrays.asList(new String[] {
+            z[15], z[19], z[18], z[14], z[25]
+        });
+        f = Arrays.asList(new String[] {
+            z[13]
+        });
+        g = Arrays.asList(new String[] {
+            z[16], z[22], z[21], z[17], z[20]
+        });
+        h = null;
+        if(s.equals("") && j >= 100 && j <= 999)
+            s = c.replace(z[23], Integer.toString(j).substring(0, 2).concat(".").concat(Integer.toString(j).substring(2, 3)));
+        if(j == 102)
+            j = 101;
+        static class _cls0
+        {
+
+            static final int a[];
+            static final int b[];
+
+            static 
+            {
+                b = new int[EsriFeatureCode.values().length];
+                try
+                {
+                    b[EsriFeatureCode.esriServerLicenseAdvanced.ordinal()] = 1;
+                }
+                catch(NoSuchFieldError nosuchfielderror) { }
+                try
+                {
+                    b[EsriFeatureCode.esriServerLicenseStandard.ordinal()] = 2;
+                }
+                catch(NoSuchFieldError nosuchfielderror1) { }
+                try
+                {
+                    b[EsriFeatureCode.esriServerLicenseBasic.ordinal()] = 3;
+                }
+                catch(NoSuchFieldError nosuchfielderror2) { }
+                try
+                {
+                    b[EsriFeatureCode.esriServerGeoEventProc.ordinal()] = 4;
+                }
+                catch(NoSuchFieldError nosuchfielderror3) { }
+                try
+                {
+                    b[EsriFeatureCode.esriPortalStandard.ordinal()] = 5;
+                }
+                catch(NoSuchFieldError nosuchfielderror4) { }
+                try
+                {
+                    b[EsriFeatureCode.esriRuntimeStandard.ordinal()] = 6;
+                }
+                catch(NoSuchFieldError nosuchfielderror5) { }
+                try
+                {
+                    b[EsriFeatureCode.esriRuntimeBasic.ordinal()] = 7;
+                }
+                catch(NoSuchFieldError nosuchfielderror6) { }
+                try
+                {
+                    b[EsriFeatureCode.esriRuntimeNetwork.ordinal()] = 8;
+                }
+                catch(NoSuchFieldError nosuchfielderror7) { }
+                try
+                {
+                    b[EsriFeatureCode.esriRuntimeSpatial.ordinal()] = 9;
+                }
+                catch(NoSuchFieldError nosuchfielderror8) { }
+                try
+                {
+                    b[EsriFeatureCode.esriRuntime3D.ordinal()] = 10;
+                }
+                catch(NoSuchFieldError nosuchfielderror9) { }
+                a = new int[EsriApplication.values().length];
+                try
+                {
+                    a[EsriApplication.esriArcGISServer.ordinal()] = 1;
+                }
+                catch(NoSuchFieldError nosuchfielderror10) { }
+                try
+                {
+                    a[EsriApplication.esriArcGISPortal.ordinal()] = 2;
+                }
+                catch(NoSuchFieldError nosuchfielderror11) { }
+                try
+                {
+                    a[EsriApplication.esriArcGISRuntime.ordinal()] = 3;
+                }
+                catch(NoSuchFieldError nosuchfielderror12) { }
+            }
+        }
+
+        switch(_cls0.a[esriapplication.ordinal()])
+        {
+        default:
+            break;
+
+        case 1: // '\001'
+            d = e;
+            if(!flag)
+                break;
+            i = !i;
+            // fall through
+
+        case 2: // '\002'
+            d = f;
+            if(!flag)
+                break;
+            // fall through
+
+        case 3: // '\003'
+            d = g;
+            break;
+        }
+        b = j;
+        String s1 = a(s);
+        h = new ArrayList();
+        BufferedReader bufferedreader = new BufferedReader(new StringReader(s1));
+        Object obj = null;
+label0:
+        do
+        {
+            String as[];
+label1:
+            do
+            {
+                do
+                {
+                    String s2;
+                    if((s2 = bufferedreader.readLine()) == null)
+                        break label0;
+                    as = s2.split(",");
+                    if(esriapplication != EsriApplication.esriArcGISPortal)
+                        break label1;
+                } while(!as[0].startsWith((String)d.get(0)));
+                h.add(as);
+            } while(!flag);
+            if(d.contains(as[0].toLowerCase()) || as[0].toLowerCase().contains(z[12]))
+                h.add(as);
+        } while(!flag);
+    }
+
+    private String a(EsriFeatureCode esrifeaturecode)
+        throws IOException, ParseException
+    {
+        switch(_cls0.b[esrifeaturecode.ordinal()])
+        {
+        case 1: // '\001'
+            return (String)e.get(1);
+
+        case 2: // '\002'
+            return (String)e.get(2);
+
+        case 3: // '\003'
+            return (String)e.get(0);
+
+        case 4: // '\004'
+            return (String)e.get(4);
+
+        case 5: // '\005'
+            return (new StringBuilder()).append((String)f.get(0)).append("_").append(getFeatureUserCount(esrifeaturecode)).toString();
+
+        case 6: // '\006'
+            return (String)g.get(0);
+
+        case 7: // '\007'
+            return (String)g.get(1);
+
+        case 8: // '\b'
+            return (String)g.get(2);
+
+        case 9: // '\t'
+            return (String)g.get(3);
+
+        case 10: // '\n'
+            return (String)g.get(4);
+        }
+        return z[28];
+    }
+
+    public boolean isEnterprise()
+        throws IOException, ParseException
+    {
+        return c(z[14]) == esriLicenseStatus.licenseStatusSuccess;
+    }
+
+    public int getCapacity()
+        throws IOException, ParseException
+    {
+        return d(z[12]);
+    }
+
+    private byte[] b(String s)
+    {
+        byte abyte0[];
+        int j;
+        boolean flag;
+        flag = EsriFeatureCode.b;
+        abyte0 = new byte[s.length() / 2];
+        j = 0;
+_L4:
+        if(j >= s.length())
+            break; /* Loop/switch isn't completed */
+        abyte0;
+        if(flag) goto _L2; else goto _L1
+_L1:
+        j / 2;
+        (byte)Integer.parseInt(s.substring(j, 2 + j), 16);
+        JVM INSTR bastore ;
+        j += 2;
+        if(!flag) goto _L4; else goto _L3
+_L3:
+        abyte0;
+_L2:
+        return;
+    }
+
+    public esriLicenseStatus canIRun(EsriFeatureCode esrifeaturecode)
+        throws IOException, ParseException
+    {
+        return c(a(esrifeaturecode));
+    }
+
+    private esriLicenseStatus c(String s)
+        throws IOException, ParseException
+    {
+        boolean flag;
+        boolean flag1;
+        boolean flag2;
+        Iterator iterator;
+        boolean flag4;
+        flag4 = EsriFeatureCode.b;
+        flag = false;
+        flag1 = false;
+        flag2 = false;
+        iterator = h.iterator();
+_L6:
+        String as[];
+        if(!iterator.hasNext())
+            break; /* Loop/switch isn't completed */
+        as = (String[])iterator.next();
+        as.length;
+        if(flag4) goto _L2; else goto _L1
+_L1:
+        6;
+        JVM INSTR icmplt 242;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_58;
+_L4:
+        break; /* Loop/switch isn't completed */
+        String s3;
+        String s4;
+        String s5;
+        String s6;
+        String s1 = as[0];
+        String s2 = as[1];
+        int j = Integer.parseInt(s2);
+        if(!s1.equalsIgnoreCase(s) || b > j)
+            break; /* Loop/switch isn't completed */
+        s3 = s2;
+        s4 = as[2];
+        s5 = as[3];
+        s6 = as[5];
+        if(s4.length() <= 0 || s5.length() <= 0 || s6.length() <= 0)
+            break; /* Loop/switch isn't completed */
+        flag1 = false;
+        flag2 = false;
+        if(s5.length() != 0 && !e(s5))
+            break; /* Loop/switch isn't completed */
+        flag1 = true;
+        if(!flag4) goto _L6; else goto _L5
+_L5:
+        String s7 = (new StringBuilder()).append(s).append(s3).append(s4).append(s5).toString();
+        byte abyte0[] = b(s6);
+        boolean flag3 = a(abyte0, s7.getBytes());
+        if(flag3)
+        {
+            flag = true;
+            if(!flag4)
+                break; /* Loop/switch isn't completed */
+        }
+        flag2 = true;
+        if(!flag4 || !flag4) goto _L6; else goto _L7
+_L7:
+        flag1;
+_L2:
+        JVM INSTR ifeq 255;
+           goto _L8 _L9
+_L8:
+        break MISSING_BLOCK_LABEL_251;
+_L9:
+        break MISSING_BLOCK_LABEL_255;
+        return esriLicenseStatus.licenseStatusExpired;
+        if(flag2)
+            return esriLicenseStatus.licenseStatusInvalidSignature;
+        if(flag)
+        {
+            if(s.equals(z[18]) || s.equals(z[19]))
+                return canIRun(EsriFeatureCode.esriServerLicenseBasic);
+            if(s.equals(z[25]))
+                if(canIRun(EsriFeatureCode.esriServerLicenseStandard) == esriLicenseStatus.licenseStatusSuccess || canIRun(EsriFeatureCode.esriServerLicenseAdvanced) == esriLicenseStatus.licenseStatusSuccess)
+                    return esriLicenseStatus.licenseStatusSuccess;
+                else
+                    return esriLicenseStatus.licenseStatusNotAvailable;
+            if(s.equals(z[21]) || s.equals(z[17]) || s.equals(z[20]))
+                return canIRun(EsriFeatureCode.esriRuntimeStandard);
+            else
+                return esriLicenseStatus.licenseStatusSuccess;
+        } else
+        {
+            return esriLicenseStatus.licenseStatusNotAvailable;
+        }
+    }
+
+    public String getExpirationDate(EsriFeatureCode esrifeaturecode)
+        throws IOException, ParseException
+    {
+        String s = a(esrifeaturecode);
+        String s1 = null;
+        Iterator iterator = h.iterator();
+        do
+        {
+            if(!iterator.hasNext())
+                break;
+            String as[] = (String[])iterator.next();
+            if(as.length < 6)
+                continue;
+            String s2 = as[0];
+            String s3 = as[1];
+            int j = Integer.parseInt(s3);
+            if(!s2.equalsIgnoreCase(s) || b > j)
+                continue;
+            String s4 = as[2];
+            String s5 = as[3];
+            String s6 = as[5];
+            if(s5.equalsIgnoreCase(z[29]))
+            {
+                s1 = z[29];
+                break;
+            }
+            if(s4.length() <= 0 || s6.length() <= 0)
+                continue;
+            String s7 = z[30];
+            SimpleDateFormat simpledateformat = new SimpleDateFormat(s7, Locale.US);
+            if(s5.isEmpty())
+                continue;
+            Date date = simpledateformat.parse(s5);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            long l = calendar.getTime().getTime();
+            s1 = String.valueOf(l);
+            break;
+        } while(true);
+        return s1;
+    }
+
+    private int d(String s)
+        throws IOException, ParseException
+    {
+        int j;
+        String s13;
+        Iterator iterator;
+        boolean flag;
+        flag = EsriFeatureCode.b;
+        String s1 = "";
+        String s4 = "";
+        String s7 = "";
+        String s10 = "";
+        j = 0;
+        s13 = "";
+        iterator = h.iterator();
+_L6:
+        String as[];
+        if(!iterator.hasNext())
+            break; /* Loop/switch isn't completed */
+        as = (String[])iterator.next();
+        String s5;
+        String s8;
+        String s11;
+        String s2 = s5 = s8 = s11 = "";
+        as.length;
+        if(flag) goto _L2; else goto _L1
+_L1:
+        6;
+        JVM INSTR icmplt 309;
+           goto _L3 _L4
+_L3:
+        break MISSING_BLOCK_LABEL_83;
+_L4:
+        continue; /* Loop/switch isn't completed */
+        String s14 = as[0];
+        String s15 = as[1];
+        int k = Integer.parseInt(s15);
+        if(s14.startsWith(s.toLowerCase()) && b <= k)
+        {
+            String s3 = s15;
+            String s6 = as[2];
+            String s9 = as[3];
+            String s12 = as[5];
+            if(s6.length() > 0 && s9.length() > 0 && s12.length() > 0 && !s13.contains(s6) && !e(s9))
+            {
+                String s16 = (new StringBuilder()).append(s14).append(s3).append(s6).append(s9).toString();
+                byte abyte0[] = b(s12);
+                if(a(abyte0, s16.getBytes()))
+                {
+                    String as1[] = s14.split("_");
+                    if(as1.length == 2)
+                    {
+                        int l = Integer.parseInt(as1[1]);
+                        j += l;
+                        s13 = (new StringBuilder()).append(s13).append(s6 = (new StringBuilder()).append(s6).append(",").toString()).toString();
+                    }
+                }
+            }
+        }
+        if(!flag) goto _L6; else goto _L5
+_L5:
+        j;
+_L2:
+        return;
+    }
+
+    private boolean e(String s)
+        throws ParseException
+    {
+        if(s.equalsIgnoreCase(z[29]))
+            return false;
+        String s1 = z[30];
+        SimpleDateFormat simpledateformat = new SimpleDateFormat(s1, Locale.US);
+        Date date = simpledateformat.parse(s);
+        Calendar calendar = Calendar.getInstance();
+        Calendar calendar1 = Calendar.getInstance();
+        calendar1.setTime(date);
+        return calendar1.before(calendar) || calendar1.equals(calendar);
+    }
+
+    private boolean a(byte abyte0[], byte abyte1[])
+    {
+        byte abyte2[] = {
+            0, -99, -15, -34, 111, -41, 47, 24, -125, -66, 
+            44, -121, -83, 26, 50, 52, 39, -12, -81, -25, 
+            -31, 106, -116, -80, -75, 103, -59, -6, -106, -80, 
+            64, -81, -56, 26, 85, 32, -86, 110, -30, -38, 
+            89, 3, 33, 62, -46, 88, 33, -104, 100, -95, 
+            -75, -85, -35, -106, -119, 80, -45, -2, -118, -50, 
+            -26, 115, -95, 89, -63, -49, 31, -22, -99, 54, 
+            103, -91, 125, -114, 125, -118, -54, -38, -28, 26, 
+            -2, 29, 65, 59, -33, -97, 29, -56, -30, 78, 
+            -22, 57, 90, -105, -87, 87, 87, 62, -88, 117, 
+            69, 105, -8, -56, -124, 86, -1, 109, -72, 3, 
+            -82, 89, -114, 51, 125, -4, -72, -91, -32, 84, 
+            89, 71, 27, 6, 64, -85, 21, 38, 119
+        };
+        byte abyte3[] = {
+            1, 0, 1
+        };
+        try
+        {
+            KeyFactory keyfactory = KeyFactory.getInstance(z[27]);
+            Signature signature = Signature.getInstance(z[26]);
+            BigInteger biginteger = new BigInteger(abyte2);
+            BigInteger biginteger1 = new BigInteger(abyte3);
+            RSAPublicKeySpec rsapublickeyspec = new RSAPublicKeySpec(biginteger, biginteger1);
+            PublicKey publickey = keyfactory.generatePublic(rsapublickeyspec);
+            byte abyte4[] = publickey.getEncoded();
+            publickey = keyfactory.generatePublic(new X509EncodedKeySpec(abyte4));
+            signature.initVerify(publickey);
+            signature.update(abyte1);
+            return signature.verify(abyte0);
+        }
+        catch(SignatureException signatureexception)
+        {
+            a.severe(signatureexception.getMessage());
+        }
+        catch(InvalidKeyException invalidkeyexception)
+        {
+            a.severe(invalidkeyexception.getMessage());
+        }
+        catch(NoSuchAlgorithmException nosuchalgorithmexception)
+        {
+            a.severe(nosuchalgorithmexception.getMessage());
+        }
+        catch(InvalidKeySpecException invalidkeyspecexception)
+        {
+            a.severe(invalidkeyspecexception.getMessage());
+        }
+        return false;
+    }
+
+    public String getFeatureDisplayName(EsriFeatureCode esrifeaturecode)
+    {
+        switch(_cls0.b[esrifeaturecode.ordinal()])
+        {
+        case 1: // '\001'
+            return z[0];
+
+        case 2: // '\002'
+            return z[7];
+
+        case 3: // '\003'
+            return z[2];
+
+        case 5: // '\005'
+            return z[1];
+
+        case 4: // '\004'
+            return z[4];
+
+        case 6: // '\006'
+            return z[8];
+
+        case 7: // '\007'
+            return z[3];
+
+        case 8: // '\b'
+            return z[5];
+
+        case 9: // '\t'
+            return z[9];
+
+        case 10: // '\n'
+            return z[6];
+        }
+        return "";
+    }
+
+    public int getFeatureUserCount(EsriFeatureCode esrifeaturecode)
+        throws IOException, ParseException
+    {
+        if(esrifeaturecode != EsriFeatureCode.esriPortalStandard)
+            return 0;
+        else
+            return d(z[13]);
+    }
+
+    public int getVersion()
+    {
+        return b;
+    }
+
+    public String getCode(EsriFeatureCode esrifeaturecode)
+        throws IOException, ParseException
+    {
+        String s1;
+        boolean flag;
+        flag = EsriFeatureCode.b;
+        String s = a(esrifeaturecode);
+        s1 = "";
+        Iterator iterator = h.iterator();
+        do
+        {
+            if(!iterator.hasNext())
+                break;
+            String as[] = (String[])iterator.next();
+            if(as.length < 6)
+                continue;
+            String s2 = as[0];
+            String s3 = as[1];
+            int j = Integer.parseInt(s3);
+            if(!s2.equals(s.toLowerCase()) || b > j)
+                continue;
+            s1 = as[5];
+            if(!flag)
+                break;
+        } while(!flag);
+        s1;
+        if(i)
+            EsriFeatureCode.b = !flag;
+        return;
+    }
+
+    private static Logger a;
+    private int b;
+    private String c;
+    private List d;
+    private List e;
+    private List f;
+    private List g;
+    private List h;
+    public static boolean i;
+    private static final String z[];
+
+    static 
+    {
+        String as[] = new String[31];
+        as;
+        as;
+        0;
+        "Pidb\nq,p{\035#Mdw(J_6U\013umxw\ng";
+        -1;
+          goto _L1
+_L6:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        true;
+        "Scd`\016o,p{\035#Mdw(J_";
+        false;
+          goto _L1
+_L7:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        2;
+        "Pidb\nq,p{\035#Mdw(J_6V\016peu";
+        true;
+          goto _L1
+_L8:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        3;
+        "B~uS&P,Da\001we{qOAme}\f";
+        2;
+          goto _L1
+_L9:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        4;
+        "DiyQ\031fbb4?qcuq\034pcd";
+        3;
+          goto _L1
+_L10:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        5;
+        "Qyx`\006ni6Z\nw{yf\004#Mxu\003z\177b";
+        4;
+          goto _L1
+_L11:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        6;
+        "Qyx`\006ni6'+#Mxu\003z\177b";
+        5;
+          goto _L1
+_L12:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        7;
+        "Pidb\nq,p{\035#Mdw(J_6G\033bbru\035g";
+        6;
+          goto _L1
+_L13:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        8;
+        "B~uS&P,Da\001we{qOPxwz\013b~r";
+        7;
+          goto _L1
+_L14:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        9;
+        "Qyx`\006ni6G\037bx\177u\003#Mxu\003z\177b";
+        8;
+          goto _L1
+_L15:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        10;
+        "oexqApifu\035bxyf";
+        9;
+          goto _L1
+_L16:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        11;
+        "VXP9W";
+        10;
+          goto _L1
+_L17:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        12;
+        "`mfu\fjxog\031q";
+        11;
+          goto _L1
+_L18:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        13;
+        "scd`\016o";
+        12;
+          goto _L1
+_L19:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        14;
+        "pzdq\001widd\035j\177s";
+        13;
+          goto _L1
+_L20:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        15;
+        "b~us\006p\177sf\031f~";
+        14;
+          goto _L1
+_L21:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        16;
+        "qyx`\006nie`\016mhwf\013";
+        15;
+          goto _L1
+_L22:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        17;
+        "qyx`\006nied\016wewx";
+        16;
+          goto _L1
+_L23:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        18;
+        "pzdg\033bbru\035g";
+        17;
+          goto _L1
+_L24:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        19;
+        "pzdu\013umxw\ng";
+        18;
+          goto _L1
+_L25:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        20;
+        "qyx`\006ni%p";
+        19;
+          goto _L1
+_L26:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        21;
+        "qyx`\006nixq\033tcd\177";
+        20;
+          goto _L1
+_L27:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        22;
+        "qyx`\006nitu\034jo";
+        21;
+          goto _L1
+_L28:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        23;
+        "\\S@Q=PEYZ0\\";
+        22;
+          goto _L1
+_L29:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        24;
+        "@6JD\035lkdu\002#J\177x\npPSG=JPZ}\ffbeq0\\ZSF<JCXK0_\177og\bfbJ\177\nzoyp\np";
+        23;
+          goto _L1
+_L30:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        25;
+        "diyq\031fbbg\031q";
+        24;
+          goto _L1
+_L31:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        26;
+        "PDW%\030jx~F<B";
+        25;
+          goto _L1
+_L32:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        27;
+        "Q_W";
+        26;
+          goto _L1
+_L33:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        28;
+        "AmrB\016oys";
+        27;
+          goto _L1
+_L34:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        29;
+        "mcxq";
+        28;
+          goto _L1
+_L35:
+        JVM INSTR aastore ;
+        JVM INSTR dup ;
+        30;
+        "gh;Y\"N!om\026z";
+        29;
+          goto _L1
+_L36:
+        JVM INSTR aastore ;
+        z;
+          goto _L2
+_L1:
+        JVM INSTR swap ;
+        toCharArray();
+        JVM INSTR dup ;
+        JVM INSTR arraylength .length;
+        JVM INSTR swap ;
+        int j = 0;
+          goto _L3
+_L5:
+        JVM INSTR dup ;
+        j;
+        JVM INSTR dup2 ;
+        JVM INSTR caload ;
+        byte byte0;
+        switch(j % 5)
+        {
+        case 0: // '\0'
+            byte0 = 3;
+            break;
+
+        case 1: // '\001'
+            byte0 = 12;
+            break;
+
+        case 2: // '\002'
+            byte0 = 22;
+            break;
+
+        case 3: // '\003'
+            byte0 = 20;
+            break;
+
+        default:
+            byte0 = 111;
+            break;
+        }
+        byte0;
+        JVM INSTR ixor ;
+        (char);
+        JVM INSTR castore ;
+        j++;
+_L3:
+        JVM INSTR swap ;
+        JVM INSTR dup_x1 ;
+        j;
+        JVM INSTR icmpgt 352;
+           goto _L4 _L5
+_L4:
+        JVM INSTR new #19  <Class String>;
+        JVM INSTR dup_x1 ;
+        JVM INSTR swap ;
+        String();
+        intern();
+        JVM INSTR swap ;
+        JVM INSTR pop ;
+        JVM INSTR swap ;
+        JVM INSTR tableswitch 0 29: default 14
+    //                   0 23
+    //                   1 32
+    //                   2 41
+    //                   3 50
+    //                   4 59
+    //                   5 69
+    //                   6 80
+    //                   7 91
+    //                   8 102
+    //                   9 113
+    //                   10 124
+    //                   11 135
+    //                   12 146
+    //                   13 157
+    //                   14 168
+    //                   15 179
+    //                   16 190
+    //                   17 201
+    //                   18 212
+    //                   19 223
+    //                   20 234
+    //                   21 245
+    //                   22 256
+    //                   23 267
+    //                   24 278
+    //                   25 289
+    //                   26 300
+    //                   27 311
+    //                   28 322
+    //                   29 333;
+           goto _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L18 _L19 _L20 _L21 _L22 _L23 _L24 _L25 _L26 _L27 _L28 _L29 _L30 _L31 _L32 _L33 _L34 _L35 _L36
+_L2:
+        a = Logger.getLogger(com/esri/license/License.getName());
+    }
+}
